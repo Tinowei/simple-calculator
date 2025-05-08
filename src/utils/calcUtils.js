@@ -83,7 +83,7 @@ const evaluatePostfix = (postfixTokens) => {
   }
 
   console.log(stack)
-  return stack[0].toLocaleString()
+  return stack[0]
 }
 
 export { infixToPostfix, evaluatePostfix }
