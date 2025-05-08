@@ -1,3 +1,14 @@
+<script setup>
+import { defineEmits } from 'vue';
+
+const emit = defineEmits(['changeTheme']);
+
+const changeTheme = (theme) => {
+  console.log(theme);
+  emit('changeTheme', theme);
+};
+</script>
+
 <template>
   <div class="w-[80px] flex flex-col justify-center items-end ">
     <div class="flex ">
@@ -19,19 +30,6 @@
     </div>
   </div>
 </template>
-
-<script setup>
-import { defineEmits } from 'vue';
-
-const emit = defineEmits(['changeTheme']);
-
-const changeTheme = (theme) => {
-  console.log(theme);
-  emit('changeTheme', theme);
-};
-
-
-</script>
 
 <style scoped>
 .theme-toggle {

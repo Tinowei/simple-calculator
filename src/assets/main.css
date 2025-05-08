@@ -69,23 +69,15 @@ html[data-theme='theme-3'] {
 /* 統一鍵盤按鈕樣式 */
 .keyboard-btn {
   @apply text-center font-bold mx-1 py-1 px-2 rounded-sm md:rounded-xl
-         bg-[var(--key-light-bg)] text-[var(--text-key)];
+         bg-[var(--key-light-bg)] text-[var(--text-key)] cursor-pointer hover:bg-white;
 }
 
 .keyboard-btn-equal {
   @apply flex justify-center items-center  text-[var(--text-equal)] bg-[var(--key-accent-bg)]
-  shadow-[0_4px_0_0_var(--key-accent-shadow)];
+  shadow-[0_4px_0_0_var(--key-accent-shadow)] hover:bg-[var(--key-accent-shadow)];
 }
 
 .keyboard-btn-alt {
   @apply flex justify-center items-center text-[var(--text-alt)] bg-[var(--key-function-bg)]
-  shadow-[0_4px_0_0_var(--key-function-shadow)];
+  shadow-[0_4px_0_0_var(--key-function-shadow)] hover:bg-[var(--key-function-shadow)];
 }
-
-/* .toggle-button-container {
-  @apply w-[30px] relative h-[20px];
-}
-
-.toggle-button {
-  @apply relative h-[20px] m-[20px];
-} */
