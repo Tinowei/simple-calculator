@@ -48,6 +48,10 @@ export const useCalculatorStore = defineStore('calculator', () => {
     }
   }
 
+  function resetExpression() {
+    expression.value = '0'
+  }
+
   return {
     expression,
     result,
@@ -55,5 +59,6 @@ export const useCalculatorStore = defineStore('calculator', () => {
     clear,
     del,
     calculate,
+    resetExpression,
   }
 })

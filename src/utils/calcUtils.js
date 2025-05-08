@@ -70,7 +70,7 @@ const evaluatePostfix = (postfixTokens) => {
     }
   }
 
-  if (isNaN(stack[0]) || stack[0] === 0) {
+  if (isNaN(stack[0])) {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
@@ -78,13 +78,12 @@ const evaluatePostfix = (postfixTokens) => {
     })
 
     const calculator = useCalculatorStore()
-    const { expression } = storeToRefs(calculator)
-
-    expression = '0'
+    calculator.resetExpression()
+    return 0
   }
 
   console.log(stack)
-  return stack[0].toLocaleString()
+  return stack[0]
 }
 
 export { infixToPostfix, evaluatePostfix }
