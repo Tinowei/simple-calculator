@@ -74,7 +74,7 @@ const evaluatePostfix = (postfixTokens) => {
     Swal.fire({
       icon: 'error',
       title: 'Oops...',
-      text: 'Something went wrong! Please reset',
+      text: 'Invalid expression!',
     })
 
     const calculator = useCalculatorStore()
@@ -83,7 +83,7 @@ const evaluatePostfix = (postfixTokens) => {
   }
 
   console.log(stack)
-  return stack[0]
+  return stack[0].toLocaleString()
 }
 
 export { infixToPostfix, evaluatePostfix }
