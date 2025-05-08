@@ -1,36 +1,91 @@
 @import './base.css';
 @import 'tailwindcss';
 
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+/* 設定tailwind theme */
+
+@theme {
+  /* --breakpoint-sm: 375px; */
+  /* ----------- */
+  --shadow-keyboard-btn: 0 4px 0 0 var(--key-light-shadow);
+  /* ----------- */
+  /* 預設主題 theme 1 */
+  --bg-main: hsl(222, 26%, 31%);
+  --bg-toggle_keypad: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+
+  --key-function-bg: hsl(225, 21%, 49%);
+  --key-function-shadow: hsl(224, 28%, 35%);
+  --key-accent-bg: hsl(6, 63%, 50%);
+  --key-accent-shadow: hsl(6, 70%, 34%);
+  --key-light-bg: hsl(30, 25%, 89%);
+  --key-light-shadow: hsl(28, 16%, 65%);
+
+  --text-main: hsl(0, 0%, 100%);
+  --text-white: hsl(221, 14%, 31%);
+  --text-key: hsl(221, 14%, 31%);
+  --text-screen: hsl(0, 0%, 100%);
+  --text-alt: #fff;
+  --text-equal: #fff;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+/* theme 2 使用html[ data-theme="theme2"]的形式設定 */
+html[data-theme='theme-2'] {
+  --bg-main: hsl(0, 0%, 90%);
+  --bg-toggle_keypad: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+
+  --key-function-bg: hsl(185, 42%, 37%);
+  --key-function-shadow: hsl(185, 58%, 25%);
+  --key-accent-bg: hsl(25, 98%, 40%);
+  --key-accent-shadow: hsl(25, 99%, 27%);
+  --key-light-bg: hsl(45, 7%, 89%);
+  --key-light-shadow: hsl(35, 11%, 61%);
+
+  --text-main: hsl(60, 10%, 19%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-key: hsl(60, 10%, 19%);
+  --text-screen: hsl(60, 10%, 19%);
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+/* theme 3 */
+html[data-theme='theme-3'] {
+  --bg-main: hsl(268, 75%, 9%);
+  --bg-toggle_keypad: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+
+  --key-function-bg: hsl(281, 89%, 26%);
+  --key-function-shadow: hsl(285, 91%, 52%);
+  --key-accent-bg: hsl(176, 100%, 44%);
+  --key-accent-shadow: hsl(177, 92%, 70%);
+  --key-light-bg: hsl(268, 47%, 21%);
+  --key-light-shadow: hsl(290, 70%, 36%);
+
+  --text-main: hsl(52, 100%, 62%);
+  --text-white: hsl(0, 0%, 100%);
+  --text-key: hsl(52, 100%, 62%);
+  --text-screen: hsl(52, 100%, 62%);
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
+/* 統一鍵盤按鈕樣式 */
+.keyboard-btn {
+  @apply text-center font-bold mx-1 py-1 px-2 rounded-sm md:rounded-xl
+         bg-[var(--key-light-bg)] text-[var(--text-key)];
 }
+
+.keyboard-btn-equal {
+  @apply flex justify-center items-center  text-[var(--text-equal)] bg-[var(--key-accent-bg)]
+  shadow-[0_4px_0_0_var(--key-accent-shadow)];
+}
+
+.keyboard-btn-alt {
+  @apply flex justify-center items-center text-[var(--text-alt)] bg-[var(--key-function-bg)]
+  shadow-[0_4px_0_0_var(--key-function-shadow)];
+}
+
+/* .toggle-button-container {
+  @apply w-[30px] relative h-[20px];
+}
+
+.toggle-button {
+  @apply relative h-[20px] m-[20px];
+} */
