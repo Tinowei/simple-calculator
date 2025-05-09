@@ -1,14 +1,11 @@
 @import './base.css';
 @import 'tailwindcss';
 
-/* 設定tailwind theme */
-
 @theme {
-  /* --breakpoint-sm: 375px; */
   /* ----------- */
   --shadow-keyboard-btn: 0 4px 0 0 var(--key-light-shadow);
   /* ----------- */
-  /* 預設主題 theme 1 */
+  /* default theme 1 */
   --bg-main: hsl(222, 26%, 31%);
   --bg-toggle_keypad: hsl(223, 31%, 20%);
   --bg-screen: hsl(224, 36%, 15%);
@@ -28,7 +25,7 @@
   --text-equal: #fff;
 }
 
-/* theme 2 使用html[ data-theme="theme2"]的形式設定 */
+/* theme 2 use attribute selector */
 html[data-theme='theme-2'] {
   --bg-main: hsl(0, 0%, 90%);
   --bg-toggle_keypad: hsl(0, 5%, 81%);
@@ -66,7 +63,7 @@ html[data-theme='theme-3'] {
   --text-screen: hsl(52, 100%, 62%);
 }
 
-/* 統一鍵盤按鈕樣式 */
+/* button style */
 .keyboard-btn {
   @apply text-center font-bold mx-1 py-1 px-2 rounded-sm md:rounded-xl
          bg-[var(--key-light-bg)] text-[var(--text-key)] cursor-pointer hover:bg-white;
